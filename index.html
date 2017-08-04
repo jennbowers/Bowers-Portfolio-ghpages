@@ -335,7 +335,7 @@
     <!-- Use the modals below to showcase details about your portfolio projects! -->
 
     <!-- Portfolio Modal 1 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="portfolio-modal modal fade" th:id="'portfolioModal' + ${allPieces.id}" th:each="allPieces : ${pieces}" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="close-modal" data-dismiss="modal">
@@ -349,13 +349,14 @@
                         <div class="col-lg-8 col-lg-offset-2">
                             <div class="modal-body">
                                 <!-- Project Details Go Here -->
-                                <h2>Hangman</h2>
-                                <p class="item-intro text-muted"><a href="https://github.com/jennbowers/week-5-project">Check out the code here!</a></p>
-                                <img class="img-responsive img-centered" src="../static/img/portfolio/hangman-guesses-3.png" alt=""/>
-                                <p>A simple game where a random word is generated, and a user has 8 turns to guess the correct letters that form the random word. They must first log in and then can begin guessing one letter at a time. All guessed letters appear at the bottom of the page after being guessed and at the end of the game the user is given the chance to play again no matter if they won or lost.</p>
+                                <h2 th:text="${allPieces.title}"></h2>
+                                <p class="item-intro text-muted"><a th:href="${allPieces.githubUrl}">Check out the code here!</a></p>
+                                <p th:if="${allPieces.githubPagesUrl}" class="item-intro text-muted"><a th:href="${allPieces.githubPagesUrl}" >See the profile on GitHub pages here!</a></p>
+                                <img class="img-responsive img-centered" th:src="${allPieces.photoUrl}" alt=""/>
+                                <p th:text="${allPieces.description}"></p>
                                 <ul class="list-inline">
-                                    <li>Date: Summer 2017</li>
-                                    <li>Technologies Used: Node.js, Mustache</li>
+                                    <span>Date: </span><span><li th:text="${allPieces.date}"></li></span>
+                                    <span>Technologies Used: </span><span><li th:text="${allPieces.technologiesUsed}"></li></span>
                                 </ul>
                                 <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
                             </div>
@@ -365,171 +366,6 @@
             </div>
         </div>
     </div>
-
-    <!-- Portfolio Modal 2 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="close-modal" data-dismiss="modal">
-                    <div class="lr">
-                        <div class="rl">
-                        </div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-8 col-lg-offset-2">
-                            <div class="modal-body">
-                                <h2>GitHub Profile</h2>
-                                <p class="item-intro text-muted"><a href="https://jennbowers.github.io/4.4-github-profile/">See the profile on GitHub pages here!</a></p>
-                                <p class="item-intro text-muted"><a href="https://github.com/jennbowers/4.4-github-profile">Check out the code here!</a></p>
-                                <img class="img-responsive img-centered" src="
-                                ../static/img/portfolio/Githubprofile-project.png" alt=""/>
-                                <p>Given the API for GitHub, we were challenged to re-create our own GitHub profiles as closely as possible. </p>
-                                <ul class="list-inline">
-                                    <li>Date: Summer 2017</li>
-                                    <li>Technologies Used: JavaScript, API, HTML, CSS</li>
-                                </ul>
-                                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Portfolio Modal 3 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="close-modal" data-dismiss="modal">
-                    <div class="lr">
-                        <div class="rl">
-                        </div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-8 col-lg-offset-2">
-                            <div class="modal-body">
-                                <!-- Project Details Go Here -->
-                                <h2>Calculator</h2>
-                                <p class="item-intro text-muted"><a href="https://jennbowers.github.io/week-three-project/">See the calculator working here!</a></p>
-                                <p class="item-intro text-muted"><a href="https://github.com/jennbowers/week-three-project">Check out the code here!</a></p>
-                                <img class="img-responsive img-centered" src="
-                                ../static/img/portfolio/calc-project-1.png" alt=""/>
-                                <p>A calculator built primarily with JavaScript, this application allows the user to enter in any numbers and perform simple math operations that are displayed on a screen. After the user is done with an equation, they can clear the screen and begin again.</p>
-                                <ul class="list-inline">
-                                    <li>Date: Summer 2017</li>
-                                    <li>Technologies Used: JavaScript, HTML, CSS</li>
-                                </ul>
-                                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Portfolio Modal 4 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="close-modal" data-dismiss="modal">
-                    <div class="lr">
-                        <div class="rl">
-                        </div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-8 col-lg-offset-2">
-                            <div class="modal-body">
-                                <!-- Project Details Go Here -->
-                                <h2>Game Piece</h2>
-                                <p class="item-intro text-muted"><a href="https://github.com/jennbowers/9.2-Assessment-GamePiece">Check out the code here!</a></p>
-                                <img class="img-responsive img-centered" src="../static/img/portfolio/gamepiece-main-1.png" alt=""/>
-                                <p>Code the beginning of a table top game, by creating a game piece that can be moved with x and y coordinates. The game piece should also freeze, and unfreeze according to game circumstances.</p>
-                                <ul class="list-inline">
-                                    <li>Date: Summer 2017</li>
-                                    <li>Technologies Used: Java</li>
-                                </ul>
-                                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Portfolio Modal 5 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="close-modal" data-dismiss="modal">
-                    <div class="lr">
-                        <div class="rl">
-                        </div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-8 col-lg-offset-2">
-                            <div class="modal-body">
-                                <!-- Project Details Go Here -->
-                                <h2>Currency Converter</h2>
-                                    <p class="item-intro text-muted"><a href="https://github.com/jennbowers/10.2-Currency-Converter">Check out the code here!</a></p>
-                                <img class="img-responsive img-centered" src="
-                                ../static/img/portfolio/currency-runner-1.png" alt=""/>
-                                <p>Created an application where a user can choose from a list of currencies, enter the amount of money they would like converted, and the currency they would like to convert their money to. The application then runs through a series of functions that converts any currency provided to US Dollars, and then converts the amount in US Dollars to any currency the user specifies. There is also added functionality to compare currencies where given an amount in any currency, it can be determinded if it is greater than or less than any other currency.</p>
-                                <ul class="list-inline">
-                                    <li>Date: Summer 2017</li>
-                                    <li>Technologies Used: Java</li>
-                                </ul>
-                                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Portfolio Modal 6 -->
-    <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="close-modal" data-dismiss="modal">
-                    <div class="lr">
-                        <div class="rl">
-                        </div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-8 col-lg-offset-2">
-                            <div class="modal-body">
-                                <!-- Project Details Go Here -->
-                                <h2>Virtual ATM</h2>
-                                <p class="item-intro text-muted"><a href="https://github.com/jennbowers/10.3-Assessment-SQL-ATM">Check out the code here!</a></p>
-                                <img class="img-responsive img-centered" src="../static/img/portfolio/atm-class-1.png" alt=""/>
-                                <p>An application that works as a user's personal ATM. A user can check their balance (which is calculated dynamically upon request), make a withdrawal, suffer from overdraft fees if too much money is withdrawn, and make a deposit, all with a user-friendly user interface.</p>
-                                <ul class="list-inline">
-                                    <li>Date: Summer 2017</li>
-                                    <li>Technologies Used: Java</li>
-                                </ul>
-                                <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- jQuery -->
     <script src="../static/vendor/jquery/jquery.min.js"></script>
 
