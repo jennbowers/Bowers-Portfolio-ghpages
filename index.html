@@ -104,7 +104,7 @@
                         <img src="./static/img/logos/js.png" alt="JavaScript logo"/>
                     </div>
                     <h4 class="service-heading service-fee">Front-End Engineering</h4>
-                    <p class="text-muted">JavaScript, HTML, CSS</p>
+                    <p class="text-muted">JavaScript, HTML, CSS, Bootstrap</p>
                 </div>
                 <div class="col-md-4">
                     <div class="skills-bee">
@@ -116,7 +116,7 @@
                         </span>
                     </div>
                     <h4 class="service-heading service-bee">Back-End Engineering</h4>
-                    <p class="text-muted">Node.js, Express, Mustache, Mongodb, Sequelize, SQL, Java, Spring, Thymeleaf</p>
+                    <p class="text-muted">Node.js, Express, Mustache, Mongodb, Sequelize, SQL, Java, Spring, Thymeleaf, JDBC, JPA</p>
                 </div>
                 <div class="col-md-4">
                     <div class="skills-gd-adobe">
@@ -243,7 +243,7 @@
                                           width="300"/>
                                 </div>
                                 <div class="timeline-body col-md-7 col-sm-12">
-                                    <p class="text-muted opening-about">I am a Web Developer in the upstate of South Carolina. In the Spring of 2017, I earned a Bachelor of Arts with a concentration in Graphic Design from Anderson University, and then continued my journey to Web Development at The Iron Yard, an immersive coding bootcamp. There I learned the fundamentals of both Front and Back-End Engineering, and chose to focus on learning Java as my second programming language.</p>
+                                    <p class="text-muted opening-about">I am a Web Developer in the upstate of South Carolina. In the Spring of 2017, I earned a Bachelor of Arts with a concentration in Graphic Design from Anderson University, and then continued my journey to Web Development at The Iron Yard, an immersive coding bootcamp. There I learned the fundamentals of both Front and Back-End Engineering, and chose to focus on learning Java as my second programming language (JavaScript being my first).</p>
                                     <p class="text-muted closing-about">My favorite part of development is working behind the scenes to make someone's life just a little bit easier, and finding the logic to make everything work exactly the way they imagined. I love building databases, solving problems, and learning more languages along the way. Moving forward, I'm excited to work with a company that helps people, believes in what they offer, and doesn't mind having fun in the process. </p>
                                 </div>
                             </div>
@@ -265,7 +265,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                    <form name="sentMessage" id="contactForm" action="mailto:jenniferbowers03@gmail.com" novalidate>
+                    <form name="sentMessage" id="contactForm"  action="https://formspree.io/your@email.com" method="POST" novalidate>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
@@ -287,10 +287,12 @@
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
+                            <input type="hidden" name="_format" value="plain" />
                             <div class="clearfix"></div>
                             <div class="col-lg-12 text-center">
                                 <div id="success"></div>
-                                <button type="submit" class="btn btn-xl btn-contact">Send Message</button>
+                                <input type="submit" name="submit" class="btn btn-xl btn-contact" value="Send Message" id="submit">
+                                <!-- <button type="submit" class="btn btn-xl btn-contact">Send Message</button> -->
                             </div>
                         </div>
                     </form>
@@ -352,7 +354,7 @@
                                 <h2>Hangman</h2>
                                 <p class="item-intro text-muted"><a href="https://github.com/jennbowers/week-5-project">Check out the code here!</a></p>
                                 <img class="img-responsive img-centered" src="./static/img/portfolio/hangman-guesses-3.png" alt=""/>
-                                <p>A simple game where a random word is generated, and a user has 8 turns to guess the correct letters that form the random word. They must first log in and then can begin guessing one letter at a time. All guessed letters appear at the bottom of the page after being guessed and at the end of the game the user is given the chance to play again no matter if they won or lost.</p>
+                                <p>A simple game where a random word is generated, and a user has 8 turns to guess the correct letters that form the word. They must log in and then can begin guessing one letter at a time. All guessed letters appear at the bottom of the page, and at the end of the game the user is given the chance to play again no matter if they win or lose.</p>
                                 <ul class="list-inline">
                                     <li>Date: Summer 2017</li>
                                     <li>Technologies Used: Node.js, Mustache</li>
@@ -385,7 +387,7 @@
                                 <p class="item-intro text-muted"><a href="https://github.com/jennbowers/4.4-github-profile">Check out the code here!</a></p>
                                 <img class="img-responsive img-centered" src="
                                 ./static/img/portfolio/Githubprofile-project.png" alt=""/>
-                                <p>Given the API for GitHub, we were challenged to re-create our own GitHub profiles as closely as possible. </p>
+                                <p>Given the API for GitHub, we were challenged to re-create our own GitHub profile as closely as possible. </p>
                                 <ul class="list-inline">
                                     <li>Date: Summer 2017</li>
                                     <li>Technologies Used: JavaScript, API, HTML, CSS</li>
@@ -484,7 +486,7 @@
                                     <p class="item-intro text-muted"><a href="https://github.com/jennbowers/10.2-Currency-Converter">Check out the code here!</a></p>
                                 <img class="img-responsive img-centered" src="
                                 ./static/img/portfolio/currency-runner-1.png" alt=""/>
-                                <p>Created an application where a user can choose from a list of currencies, enter the amount of money they would like converted, and the currency they would like to convert their money to. The application then runs through a series of functions that converts any currency provided to US Dollars, and then converts the amount in US Dollars to any currency the user specifies. There is also added functionality to compare currencies where given an amount in any currency, it can be determinded if it is greater than or less than any other currency.</p>
+                                <p>Created an application where a user can choose from a list of currencies, enter the amount of money they would like converted, and the currency they would like to convert their money to. The application then runs through a series of functions that converts any currency provided to US Dollars, and then converts the amount in US Dollars to any currency the user specifies. There is also added functionality to compare currencies where given an amount in any currency, it can be determined if it is greater than or less than any other currency.</p>
                                 <ul class="list-inline">
                                     <li>Date: Summer 2017</li>
                                     <li>Technologies Used: Java</li>
