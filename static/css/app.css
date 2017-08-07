@@ -89,8 +89,9 @@ section h2.portfolio-section-heading {
     text-align: left;
     padding-bottom: 15px;
     /*width: 55%;*/
-    float: right;
+    /*float: right;*/
 }
+
 
 section#contact {
     /*yellow pencils*/
@@ -118,6 +119,10 @@ section#contact .section-heading{
     line-height: 1.5;
     color: #fff;
     /*color: #222c67;*/
+}
+
+.contact-btn-div {
+  text-align: center;
 }
 
 .btn-contact {
